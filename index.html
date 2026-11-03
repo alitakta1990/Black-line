@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گلستان | دنیای گل و زیبایی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Vazirmatn',sans-serif;
+background:#fffaf5;
+color:#343c32;
+overflow-x:hidden;
+}
+:root{
+--green:#315b43;
+--green2:#547c5d;
+--pink:#d88e9d;
+--cream:#fffaf5;
+--gold:#c9a66b;
+}
+header{
+height:76px;
+padding:0 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#fff;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 15px #0000000a;
+}
+.logo{
+font-size:25px;
+font-weight:900;
+color:var(--green);
+}
+.logo small{
+display:block;
+font-size:9px;
+letter-spacing:4px;
+text-align:center;
+color:var(--pink);
+}
+nav{display:flex;gap:25px}
+nav a{
+text-decoration:none;
+color:#555;
+font-size:13px;
+transition:.3s;
+}
+nav a:hover{color:var(--pink)}
+.head-btn{
+background:var(--green);
+color:white;
+padding:11px 20px;
+border-radius:30px;
+text-decoration:none;
+font-size:12px;
+}
+.hero{
+min-height:570px;
+display:flex;
+align-items:center;
+padding:65px 9%;
+background:
+linear-gradient(90deg,#152c20e8,#152c2070,#152c2010),
+url('https://raw.githubusercontent.com/alitakta1990/Golestan/main/%D8%B9%DA%A9%D8%B3-%DA%AF%D9%84-%D8%B1%D8%B2-%D8%B3%D9%81%DB%8C%D8%AF-%D9%88-%D9%82%D8%B1%D9%85%D8%B2.webp')
+center/cover;
+}
+.hero-content{max-width:570px;color:white}
+.hero small{
+color:#f5c5ce;
+letter-spacing:2px;
+font-size:12px;
+}
+.hero h1{
+font-size:48px;
+line-height:1.8;
+margin:18px 0;
+font-weight:900;
+}
+.hero h1 span{color:#f4b9c5}
+.hero p{
+font-size:14px;
+line-height:2.5;
+color:#f5f0ed;
+}
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:13px 27px;
+border-radius:30px;
+background:#e5a5b1;
+color:#263b2d;
+text-decoration:none;
+font-weight:800;
+font-size:13px;
+transition:.3s;
+}
+.btn:hover{background:white;transform:translateY(-3px)}
+.strip{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+padding:28px 7%;
+background:white;
+text-align:center;
+}
+.strip strong{
+display:block;
+color:var(--green);
+font-size:14px;
+}
+.strip span{
+display:block;
+font-size:11px;
+color:#888;
+margin-top:7px;
+}
+.section{padding:80px 8%}
+.title{
+text-align:center;
+margin-bottom:42px;
+}
+.title small{
+color:var(--pink);
+letter-spacing:2px;
+font-size:11px;
+}
+.title h2{
+color:var(--green);
+font-size:29px;
+margin:12px 0;
+}
+.title p{
+font-size:12px;
+color:#888;
+line-height:2;
+}
+.categories{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:17px;
+}
+.cat{
+height:270px;
+position:relative;
+overflow:hidden;
+border-radius:12px;
+}
+.cat img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s;
+}
+.cat:hover img{transform:scale(1.1)}
+.cat:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(transparent,#102b1dcc);
+}
+.cat-info{
+position:absolute;
+bottom:20px;
+right:18px;
+z-index:2;
+color:white;
+}
+.cat-info small{
+color:#f6c3cd;
+font-size:10px;
+}
+.cat-info h3{font-size:17px;margin-top:5px}
+.products-section{background:#f4eee8}
+.filters{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+.filters button{
+border:1px solid #b7c4b8;
+background:white;
+color:var(--green);
+padding:10px 19px;
+border-radius:25px;
+font-family:inherit;
+font-size:12px;
+cursor:pointer;
+}
+.filters button.active,
+.filters button:hover{
+background:var(--green);
+color:white;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.card{
+background:white;
+border-radius:13px;
+overflow:hidden;
+box-shadow:0 5px 20px #00000008;
+transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card-img{
+height:240px;
+overflow:hidden;
+position:relative;
+}
+.card-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+.card:hover img{transform:scale(1.07)}
+.tag{
+position:absolute;
+top:13px;
+right:13px;
+background:#fff;
+color:var(--green);
+padding:6px 12px;
+border-radius:20px;
+font-size:10px;
+}
+.info{padding:18px}
+.info h3{
+color:var(--green);
+font-size:15px;
+}
+.info p{
+color:#888;
+font-size:11px;
+line-height:2;
+margin-top:8px;
+}
+.price{
+color:#b77a87;
+font-weight:800;
+font-size:13px;
+margin-top:12px;
+}
+.order{
+display:block;
+text-align:center;
+background:var(--green);
+color:white;
+text-decoration:none;
+padding:11px;
+margin-top:14px;
+border-radius:7px;
+font-size:12px;
+transition:.3s;
+}
+.order:hover{background:var(--pink)}
+.featured{
+display:grid;
+grid-template-columns:1fr 1fr;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 30px #00000008;
+}
+.featured img{
+width:100%;
+height:100%;
+min-height:340px;
+object-fit:cover;
+}
+.featured-text{
+padding:45px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.featured-text small{color:var(--pink)}
+.featured-text h2{
+color:var(--green);
+font-size:27px;
+line-height:1.8;
+margin:15px 0;
+}
+.featured-text p{
+font-size:12px;
+line-height:2.6;
+color:#777;
+}
+.contact{
+background:var(--green);
+padding:75px 20px;
+text-align:center;
+color:white;
+}
+.contact h2{font-size:28px;color:#f4c1cb}
+.contact p{
+font-size:13px;
+line-height:2.5;
+margin-top:15px;
+color:#e5e9e4;
+}
+.contact .btn{
+background:#f2c1ca;
+color:var(--green);
+}
+footer{
+background:#203b2b;
+color:#d5ded5;
+padding:35px 15px;
+text-align:center;
+font-size:11px;
+line-height:2.5;
+}
+footer strong{
+display:block;
+font-size:22px;
+color:#f1bbc5;
+}
+.hidden{display:none!important}
+@media(max-width:850px){
+header{padding:0 5%}
+nav{gap:12px}
+.categories{grid-template-columns:repeat(2,1fr)}
+.products{grid-template-columns:repeat(2,1fr)}
+.strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+header{height:68px}
+nav{display:none}
+.hero{min-height:490px;padding:50px 7%}
+.hero h1{font-size:35px}
+.section{padding:60px 5%}
+.categories{gap:10px}
+.cat{height:190px}
+.products{gap:12px}
+.card-img{height:155px}
+.info{padding:12px}
+.info h3{font-size:13px}
+.featured{grid-template-columns:1fr}
+.featured img{height:240px;min-height:240px}
+.featured-text{padding:27px}
+.title h2{font-size:24px}
+}
+@media(max-width:360px){
+.products{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+گلستان
+<small>GOLESTAN FLOWERS</small>
+</div>
+
+<nav>
+<a href="#home">صفحه اصلی</a>
+<a href="#categories">دسته‌بندی</a>
+<a href="#products">محصولات</a>
+<a href="#contact">تماس با ما</a>
+</nav>
+
+<a href="#contact" class="head-btn">ارتباط با ما</a>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<small>✿ THE BEAUTY OF NATURE ✿</small>
+<h1>زیبایی طبیعت<br><span>در دستان شما</span></h1>
+<p>
+به گلستان خوش آمدید؛ جایی برای انتخاب زیباترین گل‌ها،
+دسته‌گل‌های خاص و گیاهان آپارتمانی.
+زیبایی را به عزیزانتان هدیه دهید.
+</p>
+<a href="#products" class="btn">مشاهده محصولات ←</a>
+</div>
+</section>
+
+<div class="strip">
+<div>
+<strong>🌹 گل‌های تازه</strong>
+<span>انتخاب گل‌های زیبا</span>
+</div>
+<div>
+<strong>💐 دسته‌گل خاص</strong>
+<span>مناسب هدیه و مناسبت‌ها</span>
+</div>
+<div>
+<strong>🎁 باکس گل</strong>
+<span>هدیه‌ای متفاوت</span>
+</div>
+<div>
+<strong>🪴 گیاه آپارتمانی</strong>
+<span>طبیعت در خانه شما</span>
+</div>
+</div>
+
+<section class="section" id="categories">
+<div class="title">
+<small>OUR COLLECTION</small>
+<h2>دسته‌بندی محصولات</h2>
+<p>زیبایی مورد علاقه خود را انتخاب کنید</p>
+</div>
+
+<div class="categories">
+
+<div class="cat">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/Types-of-roses.webp" alt="گل طبیعی">
+<div class="cat-info">
+<small>01 / NATURAL FLOWERS</small>
+<h3>گل طبیعی</h3>
+</div>
+</div>
+
+<div class="cat">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/80-pink-rose-bouquet-1.webp" alt="دسته گل">
+<div class="cat-info">
+<small>02 / BOUQUET</small>
+<h3>دسته‌گل</h3>
+</div>
+</div>
+
+<div class="cat">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/0GyeN7EgpOEFRj0j.jpg" alt="باکس گل">
+<div class="cat-info">
+<small>03 / FLOWER BOX</small>
+<h3>باکس گل</h3>
+</div>
+</div>
+
+<div class="cat">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/3-3.jpg" alt="گیاه آپارتمانی">
+<div class="cat-info">
+<small>04 / HOUSE PLANTS</small>
+<h3>گیاه آپارتمانی خاص</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section products-section" id="products">
+
+<div class="title">
+<small>FLOWER SHOP</small>
+<h2>محصولات گلستان</h2>
+<p>انتخابی زیبا برای لحظه‌های خاص زندگی</p>
+</div>
+
+<div class="filters">
+<button class="active" data-filter="all">همه محصولات</button>
+<button data-filter="natural">گل طبیعی</button>
+<button data-filter="bouquet">دسته‌گل</button>
+<button data-filter="box">باکس گل</button>
+<button data-filter="plant">گیاه آپارتمانی</button>
+</div>
+
+<div class="products">
+
+<div class="card" data-category="natural">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/Types-of-roses.webp" alt="انواع گل رز">
+<span class="tag">گل طبیعی</span>
+</div>
+<div class="info">
+<h3>مجموعه گل‌های طبیعی</h3>
+<p>زیبایی و طراوت گل‌های طبیعی برای سلیقه‌های خاص.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+<div class="card" data-category="bouquet">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/80-pink-rose-bouquet-1.webp" alt="دسته گل رز صورتی">
+<span class="tag">دسته‌گل</span>
+</div>
+<div class="info">
+<h3>دسته‌گل رز صورتی</h3>
+<p>انتخابی لطیف و زیبا برای هدیه دادن.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+<div class="card" data-category="box">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/0GyeN7EgpOEFRj0j.jpg" alt="باکس گل">
+<span class="tag">باکس گل</span>
+</div>
+<div class="info">
+<h3>باکس گل ویژه</h3>
+<p>هدیه‌ای متفاوت برای مناسبت‌های خاص.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+<div class="card" data-category="plant">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/3-3.jpg" alt="گیاه آپارتمانی">
+<span class="tag">گیاه آپارتمانی</span>
+</div>
+<div class="info">
+<h3>گیاه آپارتمانی خاص</h3>
+<p>طبیعت و سرسبزی برای فضای خانه و محل کار.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+<div class="card" data-category="bouquet">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/A-bouquet-of-60-red-roses-1.webp" alt="دسته گل رز قرمز">
+<span class="tag">دسته‌گل</span>
+</div>
+<div class="info">
+<h3>دسته‌گل ۶۰ رز قرمز</h3>
+<p>هدیه‌ای چشم‌نواز و باشکوه برای عزیزان شما.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+<div class="card" data-category="natural">
+<div class="card-img">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/%D8%B9%DA%A9%D8%B3-%DA%AF%D9%84-%D8%B1%D8%B2-%D8%B3%D9%81%DB%8C%D8%AF-%D9%88-%D9%82%D8%B1%D9%85%D8%B2.webp" alt="گل رز سفید و قرمز">
+<span class="tag">گل طبیعی</span>
+</div>
+<div class="info">
+<h3>گل رز سفید و قرمز</h3>
+<p>ترکیبی زیبا از رنگ‌های جذاب طبیعت.</p>
+<div class="price">استعلام قیمت</div>
+<a href="#contact" class="order">سفارش و اطلاعات بیشتر</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="featured">
+<img src="https://raw.githubusercontent.com/alitakta1990/Golestan/main/A-bouquet-of-60-red-roses-1.webp" alt="دسته گل رز">
+<div class="featured-text">
+<small>✿ SPECIAL COLLECTION</small>
+<h2>زیبایی را به عزیزانتان هدیه دهید</h2>
+<p>
+گاهی یک دسته‌گل زیبا می‌تواند
+زیباترین حرف‌های ناگفته را بیان کند.
+در گلستان، زیبایی طبیعت را به لحظه‌های
+خاص زندگی خود دعوت کنید.
+</p>
+<a href="#products" class="btn">مشاهده محصولات</a>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2>با گلستان در ارتباط باشید</h2>
+<p>
+برای اطلاع از محصولات، قیمت‌ها و ثبت سفارش
+با فروشگاه تماس بگیرید.
+</p>
+<a href="#home" class="btn">بازگشت به صفحه اصلی ↑</a>
+</section>
+
+<footer>
+<strong>گلستان</strong>
+GOLESTAN FLOWERS
+<p>زیبایی طبیعت، هدیه‌ای برای لحظه‌های خاص</p>
+<p>© تمامی حقوق محفوظ است</p>
+</footer>
+
+<script>
+const filterButtons = document.querySelectorAll('.filters button');
+const cards = document.querySelectorAll('.card');
+
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+const filter = button.dataset.filter;
+
+filterButtons.forEach(item => item.classList.remove('active'));
+button.classList.add('active');
+
+cards.forEach(card => {
+if(filter === 'all' || card.dataset.category === filter){
+card.classList.remove('hidden');
+}else{
+card.classList.add('hidden');
+}
+});
+});
+});
+</script>
+
+</body>
+</html>
